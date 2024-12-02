@@ -1,0 +1,306 @@
+/* General */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    width: 100px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantiene la proporción */
+    display: block;
+    margin: 0 auto 20px; /* Centra el logo y agrega espacio inferior */
+    border-radius: 5px;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://presenciaeninternet.com/wp-content/uploads/2024/02/Temas-WordPress-Presencia-ok-1080x675.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #2980b9;
+}
+
+/* Servicios */
+.servicios {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.servicios h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.servicio img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.servicio h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+/* Galería */
+.galeria {
+    padding: 200px 0;
+    text-align: center;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 20px;
+}
+
+.galeria img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza la animación */
+}
+
+/* Efecto zoom al pasar el cursor */
+.galeria img:hover {
+    transform: scale(1.1); /* Incrementa el tamaño en un 10% */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Agrega un efecto de sombra */
+}
+
+/* Modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close:hover,
+.close:focus {
+    color: #ccc;
+}
+
+
+/* Contacto */
+.contacto {
+    background: url('fondo2.jpg') no-repeat center center/cover;
+    padding: 150px 0;
+    text-align: center;
+    color: white; /* Para que el texto sea visible sobre la imagen */
+}
+
+.contacto h2 {
+    color: rgb(0, 0, 0); /* Asegúrate de que el título sea legible */
+}
+
+.contacto form {
+    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para destacar el formulario */
+    padding: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contacto input, .contacto textarea {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo claro para los campos */
+    color: #333; /* Color del texto */
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contacto .btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.contacto .btn:hover {
+    background-color: #2980b9;
+}
+
+/* Mensaje de validación del formulario */
+.form-message {
+    margin-top: 20px;
+    font-size: 1rem;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Oculto por defecto */
+}
+
+.form-message.success {
+    background-color: #4caf50;
+    color: white;
+}
+
+.form-message.error {
+    background-color: #f44336;
+    color: white;
+}
+
+
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.politica-link {
+    color: #3498db;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.politica-link:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor de los íconos */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: white;
+    font-size: 1.5rem; /* Tamaño de los íconos */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Cambia de color al pasar el mouse */
+.social-icons a:hover {
+    color: #3498db;
+}
+
+/* Iconos específicos */
+.social-icons .whatsapp:hover {
+    color: #25D366; /* Color verde de WhatsApp */
+}
+
+.social-icons .facebook:hover {
+    color: #4267B2; /* Color azul de Facebook */
+}
+
+.social-icons .instagram:hover {
+    color: #E1306C; /* Color rosado de Instagram */
+}
+
+/* Estilos para pantallas pequeñas (teléfonos) */
+@media (max-width: 768px) {
+    .hero {
+        padding: 50px 20px; /* Reduce el espacio del encabezado */
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* Reduce el tamaño del título */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Reduce el tamaño del texto descriptivo */
+    }
+
+    .servicios-grid, .galeria-grid {
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+    }
+
+    .servicio img, .galeria img {
+        width: 100%;
+    }
+
+    .contacto form {
+        padding: 20px; /* Reduce el padding del formulario */
+    }
+
+    footer p {
+        font-size: 0.9rem; /* Ajusta el tamaño del texto en el footer */
+    }
+}
+
+/* Estilos para pantallas medianas (tablets y pequeños escritorios) */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2rem; /* Ajusta el título */
+    }
+
+    .servicios-grid, .galeria-grid {
+        grid-template-columns: repeat(2, 1fr); /* Cambia a dos columnas */
+    }
+
+    .contacto form {
+        padding: 40px; /* Reduce ligeramente el padding */
+    }
+}

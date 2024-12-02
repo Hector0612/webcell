@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoción - Desarrollo de Páginas Web</title>
+    <link rel="stylesheet" href="stilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="hero">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="logo.Admini.jpg" alt="Logo de la empresa">
+            </div>
+            <h1>Diseño y Desarrollo de Páginas Web Profesionales</h1>
+            <p>Creamos sitios web únicos y funcionales que impulsan tu negocio. ¡Potencia tu presencia en línea hoy!</p>
+            <a href="#contacto" class="btn">Contáctanos</a>
+        </div>
+    </header>
+
+
+    <!-- Servicios -->
+    <section class="servicios" id="servicios">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="servicios-grid">
+                <div class="servicio">
+                    <img src="MODELO.PAG.WEB.jpg" alt="Diseño Web">
+                    <h3>Diseño Web</h3>
+                    <p>Diseños modernos, atractivos y adaptados a tus necesidades.</p>
+                </div>
+                <div class="servicio">
+                    <img src="PROGRAM.EFICIEN.jpg" alt="Desarrollo Web">
+                    <h3>Desarrollo Web</h3>
+                    <p>Programación eficiente y optimizada para un rendimiento superior.</p>
+                </div>
+                <div class="servicio">
+                    <img src="SEO.jpg" alt="SEO">
+                    <h3>Optimización SEO</h3>
+                    <p>Mejoramos la visibilidad de tu sitio en los motores de búsqueda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="galeria" id="portafolio">
+        <div class="container">
+            <h2>Proyectos Recientes</h2>
+            <div class="galeria-grid">
+                <img src="PROY.1.jpg" alt="Proyecto 1">
+                <img src="PROY.2.jpg" alt="Proyecto 2">
+                <img src="proy.3.jpg" alt="Proyecto 3">
+                <img src="Proy.4.jpg" alt="Proyecto 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para imágenes -->
+    <div id="image-modal" class="modal">
+        <span id="close-modal" class="close">&times;</span>
+        <img id="modal-image" class="modal-content" alt="Imagen del proyecto">
+    </div>
+
+    <script>
+        // Obtener elementos del DOM
+        const modal = document.getElementById("image-modal");
+        const modalImg = document.getElementById("modal-image");
+        const closeModal = document.getElementById("close-modal");
+    
+        // Función para abrir el modal al hacer clic en una imagen
+        document.querySelectorAll(".galeria img").forEach((img) => {
+            img.addEventListener("click", () => {
+                modal.style.display = "block";
+                modalImg.src = img.src; // Asigna la imagen al modal
+            });
+        });
+    
+        // Función para cerrar el modal
+        closeModal.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    
+        // Cerrar el modal al hacer clic fuera de la imagen
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+    
+
+
+    <!-- Contacto -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <h2>CONTÁCTANOS</h2>
+            <form id="contact-form">
+                <input type="text" id="name" placeholder="Tu nombre" required>
+                <input type="email" id="email" placeholder="Tu correo" required>
+                <textarea id="message" placeholder="Mensaje" required></textarea>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+            <div id="form-message" class="form-message"></div> <!-- Contenedor para mensajes -->
+        </div>
+    </section>
+
+    <script>
+        // Captura el formulario y el contenedor de mensajes
+        const form = document.getElementById("contact-form");
+        const messageContainer = document.getElementById("form-message");
+    
+        // Función para validar un correo
+        function isValidEmail(email) {
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailPattern.test(email);
+        }
+    
+        // Escucha el evento de envío del formulario
+        form.addEventListener("submit", (event) => {
+            event.preventDefault(); // Previene el envío por defecto
+    
+            // Obtén los valores de los campos
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+    
+            // Validación básica
+            if (!name || !email || !message) {
+                showMessage("Por favor, rellena todos los campos.", "error");
+                return;
+            }
+    
+            if (!isValidEmail(email)) {
+                showMessage("Por favor, introduce un correo válido.", "error");
+                return;
+            }
+    
+            // Si pasa la validación, muestra mensaje de éxito
+            showMessage("Mensaje enviado exitosamente. ¡Gracias por contactarnos!", "success");
+    
+            // Limpia los campos del formulario
+            form.reset();
+        });
+    
+        // Función para mostrar mensajes
+        function showMessage(message, type) {
+            messageContainer.textContent = message;
+            messageContainer.className = `form-message ${type}`; // Asigna clase según el tipo
+            messageContainer.style.display = "block";
+    
+            // Ocultar el mensaje después de 3 segundos
+            setTimeout(() => {
+                messageContainer.style.display = "none";
+            }, 3000);
+        }
+    </script>
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 Desarrollo Web - Todos los derechos reservados.</p>
+            <a href="politica.html" class="politica-link">Política de privacidad</a>
+            <div class="social-icons">
+                <a href="https://wa.me/924858323" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://facebook.com/renny.granados.5" target="_blank" class="facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/tu_pagina" target="_blank" class="instagram"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
